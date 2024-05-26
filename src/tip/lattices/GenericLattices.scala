@@ -146,9 +146,9 @@ class PowersetLattice[A] extends Lattice {
 
   type Element = Set[A]
 
-  val bottom: Element = ??? //<--- Complete here
+  val bottom = Set.empty[A]
 
-  def lub(x: Element, y: Element): Element = ??? //<--- Complete here
+  def lub(x: Element, y: Element) = x | y
 }
 
 /**
