@@ -24,9 +24,9 @@ $
 E_1 == E_2 : [|E_1|] = [|E_2|] and [|E_1 == E_2|] = bool \
 E_1 > E_2 : [|E_1|] = [|E_2|] = int and [|E_1 > E_2|] = bool \
 E_1 op E_2 : [|E_1|] = [|E_2|] = [|E_1 op E_2|] = int \
-output E : [|E|] = bool \
+output E : [|E|] = alpha \
 "if" (E)S : [|E|] = bool \
-"if" (E)S_1 "else" S_2 : [|E|] = bool
+"if" (E)S_1 "else" S_2 : [|E|] = bool \
 "while" (E)S : [|E|] = bool
 $
 
@@ -51,8 +51,8 @@ arr = {2, 4, 8};
 
 Правила типизации:
 $
-E[E_idx] : [|E|] = alpha and [|E[E_idx]|] = int and [|E[E_idx]|] = alpha \
-E[E_idx] = E_val : [|E|] = [|E_val|][] and [|E_idx|] = int and [|E[E_idx]|] = [|E_val|] \
+E[E_idx] : [|E|] = alpha[] and [|E[E_idx]|] = int and [|E[E_idx]|] = alpha \
+E[E_idx] = E_val : [|E|] = alpha[] and [|E_idx|] = int and [|E[E_val]|] = alpha \
 {} : [|{}|] = alpha[] \
 {E_1, E_2, ... , E_n} : [|{E_1, E_2, ..., E_n}|] = [|E_1|] = [|E_2|] = ... = [|E_n|] and [|{E_1, E_2, ..., E_n}|] = [|E_1|][]
 $
